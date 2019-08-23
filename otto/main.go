@@ -6,11 +6,12 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/robertkrimen/otto"
-	"github.com/robertkrimen/otto/underscore"
+	"github.com/Forever-Young/otto"
+	"github.com/Forever-Young/otto/parser"
+	// "github.com/Forever-Young/otto/underscore"
 )
 
-var flag_underscore *bool = flag.Bool("underscore", true, "Load underscore into the runtime environment")
+// var flag_underscore *bool = flag.Bool("underscore", true, "Load underscore into the runtime environment")
 
 func readSource(filename string) ([]byte, error) {
 	if filename == "" || filename == "-" {
@@ -22,9 +23,9 @@ func readSource(filename string) ([]byte, error) {
 func main() {
 	flag.Parse()
 
-	if !*flag_underscore {
-		underscore.Disable()
-	}
+	// if !*flag_underscore {
+	// 	underscore.Disable()
+	// }
 
 	err := func() error {
 		src, err := readSource(flag.Arg(0))
@@ -32,8 +33,9 @@ func main() {
 			return err
 		}
 
-		vm := otto.New()
-		_, err = vm.Run(src)
+		// vm := otto.New()
+		// _, err = vm.Run(src)
+		_, err = parser.ParseFile(nil, flag.Arg(0), src, 0)
 		return err
 	}()
 	if err != nil {

@@ -1,16 +1,16 @@
 # otto
 --
 ```go
-import "github.com/robertkrimen/otto"
+import "github.com/Forever-Young/otto"
 ```
 
 Package otto is a JavaScript parser and interpreter written natively in Go.
 
-http://godoc.org/github.com/robertkrimen/otto
+http://godoc.org/github.com/Forever-Young/otto
 
 ```go
 import (
-   "github.com/robertkrimen/otto"
+   "github.com/Forever-Young/otto"
 )
 ```
 
@@ -109,7 +109,7 @@ result, _ = vm.Run(`
 A separate parser is available in the parser package if you're just interested
 in building an AST.
 
-http://godoc.org/github.com/robertkrimen/otto/parser
+http://godoc.org/github.com/Forever-Young/otto/parser
 
 Parse and return an AST
 
@@ -136,9 +136,9 @@ program, err := parser.ParseFile(nil, filename, src, 0)
 ### otto
 
 You can run (Go) JavaScript from the commandline with:
-http://github.com/robertkrimen/otto/tree/master/otto
+http://github.com/Forever-Young/otto/tree/master/otto
 
-    $ go get -v github.com/robertkrimen/otto/otto
+    $ go get -v github.com/Forever-Young/otto/otto
 
 Run JavaScript by entering some source on stdin or by giving otto a filename:
 
@@ -151,14 +151,14 @@ import:
 
 ```go
 import (
-    "github.com/robertkrimen/otto"
-    _ "github.com/robertkrimen/otto/underscore"
+    "github.com/Forever-Young/otto"
+    _ "github.com/Forever-Young/otto/underscore"
 )
 
 // Now every otto runtime will come loaded with underscore
 ```
 
-For more information: http://github.com/robertkrimen/otto/tree/master/underscore
+For more information: http://github.com/Forever-Young/otto/tree/master/underscore
 
 
 ### Caveat Emptor
@@ -207,7 +207,7 @@ import (
     "os"
     "time"
 
-    "github.com/robertkrimen/otto"
+    "github.com/Forever-Young/otto"
 )
 
 var halt = errors.New("Stahp")
